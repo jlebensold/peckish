@@ -1,0 +1,2 @@
+// Recipes
+export const SET_SEARCHED_RECIPES = 'SET_SEARCHED_RECIPES'
