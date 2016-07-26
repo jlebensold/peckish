@@ -45,7 +45,7 @@ class Home extends Component {
         <ScrollView style={styles.scrollSection} >
           {!this.state.searching && this.recipes().map((recipe) => {
             return <View key={recipe.id} >
-              <Image source={ { uri: recipe.image } } style={styles.resultImage} />
+              <Image source={ { uri: recipe.thumbnail } } style={styles.resultImage} />
               <Text style={ styles.resultText } >{recipe.title}</Text>
             </View>
           })}
