@@ -29,6 +29,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <View style={styles.scene}>
         <View style={styles.searchSection}>
@@ -44,10 +45,12 @@ class Home extends Component {
         </View>
         <ScrollView style={styles.scrollSection} >
           {!this.state.searching && this.recipes().map((recipe) => {
-            return <View key={recipe.id} >
+            return <TouchableHighlight key={recipe.id}  style={styles.searchButton} onPress={ () => this.props.navigate({ key: 'Detail', id: recipe.id}) }>
+            <View>
               <Image source={ { uri: recipe.thumbnail } } style={styles.resultImage} />
               <Text style={ styles.resultText } >{recipe.title}</Text>
             </View>
+          </TouchableHighlight>
           })}
           {this.state.searching ? <Text>Searching...</Text> : null }
         </ScrollView>
