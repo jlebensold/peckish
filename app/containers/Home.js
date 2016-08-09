@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactNative from 'react-native';
+import { appStyle } from '../styles';
 const {
   ScrollView,
   View,
@@ -29,7 +30,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.scene}>
         <View style={styles.searchSection}>
@@ -47,8 +47,8 @@ class Home extends Component {
           {!this.state.searching && this.recipes().map((recipe) => {
             return <TouchableHighlight key={recipe.id}  style={styles.searchButton} onPress={ () => this.props.navigate({ key: 'Detail', id: recipe.id}) }>
             <View>
-              <Image source={ { uri: recipe.thumbnail } } style={styles.resultImage} />
-              <Text style={ styles.resultText } >{recipe.title}</Text>
+              <Image source={ { uri: recipe.thumbnail } } style={appStyle.resultImage} />
+              <Text style={ appStyle.resultText } >{recipe.title}</Text>
             </View>
           </TouchableHighlight>
           })}
@@ -80,14 +80,6 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 0.7,
   },
-  resultText: {
-    backgroundColor: '#000',
-    color: '#FFF',
-    height: 20,
-  },
-  resultImage: {
-    height: 150,
-  }
 });
 
 function mapStateToProps(state) {

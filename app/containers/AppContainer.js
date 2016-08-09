@@ -13,14 +13,6 @@ import Home from './Home';
 import Detail from './Detail';
 import ApplicationTabs from './ApplicationTabs';
 
-import type  {
-  NavigationSceneRendererProps,
-  NavigationState,
-  NavigationTransitionProps,
-  NavigationTransitionSpec,
-} from 'NavigationTypeDefinition';
-
-
 const {
   PropTypes: NavigationPropTypes,
   StateUtils: NavigationStateUtils,
@@ -29,7 +21,6 @@ const {
 } = NavigationExperimental;
 
 const {
-  PagerPanResponder: NavigationPagerPanResponder,
   PagerStyleInterpolator: NavigationPagerStyleInterpolator,
 } = NavigationCard;
 
